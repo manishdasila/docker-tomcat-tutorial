@@ -6,6 +6,7 @@ node {
     }
     stage ('Build Docker Image') {
         /* This builds the actual image; synonymous to  * docker build on the command line */
+        sh '/opt/maven/bin/mvn clean install'
         app = docker.build("senthil123/mytomcat")
     }
     stage('Test Docker Image') {
